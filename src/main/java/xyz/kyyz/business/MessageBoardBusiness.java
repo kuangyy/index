@@ -54,17 +54,6 @@ public class MessageBoardBusiness implements IMessageBoard {
         Assert.hasText(messageBoardModel.getContent(), "请输入有效内容");
         Assert.hasText(messageBoardModel.getNickname(), "昵称无效");
 
-        if(messageBoardModel.getContact()!=null){
-            String enc_contact = URLEncoder.encode(messageBoardModel.getContact(), "utf-8");
-            messageBoardModel.setContact(enc_contact);
-        }
-
-        String enc_name = URLEncoder.encode(messageBoardModel.getNickname(), "utf-8");
-        messageBoardModel.setNickname(enc_name);
-
-        String enc_content = URLEncoder.encode(messageBoardModel.getContent(), "utf-8");
-        messageBoardModel.setContent(enc_content);
-
         messageBoardModel.setId(null);
         messageBoardModel.setCreateTime(null);
 
